@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  pdfbot:
+    build: .
+    restart: always
+    env_file:
+      - config.env
+    volumes:
+      - ./work:/app/work

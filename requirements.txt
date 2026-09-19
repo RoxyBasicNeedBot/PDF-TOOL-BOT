@@ -1,0 +1,49 @@
+# ── Main Telegram Client (kurigram) ───────────────────────────
+kurigram>=2.2.0    # High-performance Pyrogram fork (installs as pyrogram)
+TgCrypto>=1.2.3    # Main MTProto cryptographic acceleration speedups
+pytelegrambotapi>=4.11.0 # telebot client used by scriptorium.py and legacy modules
+
+# ── Bot-to-Bot Bridge (aiogram) ───────────────────────────────
+aiogram>=3.7.0     # Modern Telegram Bot API framework for B2B communications
+
+# ── PDF Operations & Conversions ──────────────────────────────
+PyMuPDF>=1.23.0    # Core PDF rendering and extraction
+PyPDF2>=3.0.1      # Legacy PDF page manipulation fallback
+fpdf2>=2.7.4       # Page creation and custom formatting
+pdf2docx>=0.5.6    # Word conversions
+pdfplumber>=0.10.0 # Advanced tabular text extraction
+pdfkit>=1.0.0      # HTML to PDF layout rendering
+ocrmypdf>=13.6.0   # Text recognition scans
+reportlab>=4.0.0   # Custom templates and styling
+pillow>=10.0.0     # Image manipulations (compression/formatting)
+qrcode>=7.4.2      # QR code generation and matrix embedding
+
+# ── Office Format Handlers ────────────────────────────────────
+openpyxl>=3.1.0    # Excel spreadsheet manipulations
+python-pptx>=0.6.21 # PowerPoint presentation templates
+aspose-words>=24.1.0 # Docx layouts rendering
+
+# ── Web/HTTP Stack ────────────────────────────────────────────
+aiohttp>=3.9.0     # Async HTTP clients and webhook streams
+aiofiles>=23.0.0   # Async local file stream interactions
+requests>=2.31.0   # Sync HTTP operations fallback
+flask>=3.0.0       # Webkeeper pulse health check server
+werkzeug>=3.0.0    # WSGI utility suite
+
+# ── Database Layer ────────────────────────────────────────────
+motor>=3.3.0       # Async MongoDB client driver
+pymongo[srv]>=4.6.0 # Database transport protocols
+
+# ── Utilities ─────────────────────────────────────────────────
+python-dotenv>=1.0.0 # Configuration management
+psutil>=5.9.0      # Ramguard system resources checking
+hachoir>=3.2.0     # Video/Audio metadata scanning
+arabic-reshaper>=3.0.0 # RTL font layouts reshaping
+python-bidi>=0.4.2  # Bidirectional text algorithm
+convertapi>=1.6.0  # External converters fallback api client
+
+# ── Bibliosearch Package Dependencies ─────────────────────────
+beautifulsoup4>=4.12.0 # Libgen mirrors web scrapper
+lxml>=5.0.0        # XML markup parser
+tldextract>=5.0.0  # Top-level domain extraction resolver
+

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+config.env
+*.log
+
+# Project specific
+work/
+log.txt
+*.jpeg
+*.jpg
+*.png
+*.pdf

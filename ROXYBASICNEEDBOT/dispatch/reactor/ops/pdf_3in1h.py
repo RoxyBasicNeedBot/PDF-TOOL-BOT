@@ -1,0 +1,44 @@
+# ┌─────────────────────────────────────────────────────────────┐
+# │                    𕲏𕲏𕲏𕲏•𝔹𝕒𝕤𝕚𝕔ℕ𝕖𝕖𝕕𝔹𝕠𝕥                     │
+# │            The Ultimate Telegram PDF Suite Tool             │
+# ├─────────────────────────────────────────────────────────────┤
+# │        © 2026 RoxyBasicNeedBot. All Rights Reserved.        │
+# └─────────────────────────────────────────────────────────────┘
+
+import fitz
+from tracer import tracer
+
+
+async def threePagesToOneH(input_file: str, cDIR: str) -> (bool, str):
+    """
+    This function takes a PDF file with three pages per sheet and converts it to a single page per sheet format.
+    The output file will contain all pages from the input file in sequential order, but with each pair of pages
+    combined onto a single sheet.
+
+    parameter:
+        input_file : Here is the path of the file that the user entered
+        cDIR       : This is the location of the directory that belongs to the specific user.
+
+    return:
+        bool        : Return True when the request is successful
+        output_path : This is the path where the output file can be found.
+    """
+    try:
+        output_path = f"{cDIR}/outPut.pdf"
+        with fitz.open(input_file) as iNPUT:
+            with fitz.open() as oUTPUT:
+                height, width = fitz.paper_size("a4")
+                r1 = fitz.Rect(0, 0, width / 3, height)
+                r2 = fitz.Rect(width / 3, 0, (2 * width) / 3, height)
+                r3 = fitz.Rect((2 * width) / 3, 0, width, height)
+                r_tab = [r1, r2, r3]
+                for page in iNPUT:
+                    if page.number % 3 == 0:
+                        pg = oUTPUT.new_page(-1, width=width, height=height)
+                    pg.show_pdf_page(r_tab[page.number % 3], iNPUT, page.number)
+                oUTPUT.save(output_path, garbage=3, deflate=True)
+        return True, output_path
+
+    except Exception as e:
+        logger.error(f"🐞 Error: {e}", exc_info=True)
+        return False, str(e)
